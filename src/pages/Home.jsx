@@ -8,7 +8,7 @@ function Home() {
 const [searchQuery, setSearchQuery] = useState("")
 const[movies,setMovies] = useState([]);
 const [error,SetError] = useState(null);
-const [loading,setloading] =  useState(true)
+const [loading,setLoading] =  useState(true)
 
     useEffect(() => {
         const loadPopularMovies = async () => {
@@ -28,7 +28,7 @@ const [loading,setloading] =  useState(true)
     },[])
 
     const handleSearch = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (!searchQuery.trim()) return
         if (loading) return
 
@@ -43,8 +43,6 @@ const [loading,setloading] =  useState(true)
         } finally{
             setLoading(false)
         }
-
-        setSearchQuery("")
     }
 
     return(
